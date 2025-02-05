@@ -3,6 +3,8 @@ const express = require('express');
 const browserSync = require('browser-sync');
 const app = express();
 const PORT = process.env.PORT || 3000;
+const richardRouter = require('./richardRouter')
+
 
 // Simple middleware to log request details
 app.use((req, res, next) => {
@@ -18,9 +20,26 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');
 });
 
+app.use('/richard', richardRouter);
+
 // Example route for an About page
 app.get('/about', (req, res) => {
   res.sendFile(__dirname + '/public/about.html');
+});
+
+// Anna Page
+app.get('/anna', (req, res) => {
+  res.sendFile(__dirname + '/public/richard.html');
+});
+
+// Christine Page
+app.get('/christine', (req, res) => {
+  res.sendFile(__dirname + '/public/richard.html');
+});
+
+// nick Page
+app.get('/nick', (req, res) => {
+  res.sendFile(__dirname + '/public/richard.html');
 });
 
 // Start the server

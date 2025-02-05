@@ -40,6 +40,7 @@ app.get('/christine', (req, res) => {
 // nick Page
 app.get('/nick', (req, res) => {
   res.sendFile(__dirname + '/public/richard.html');
+});
 // Catch-all route for undefined paths
 
 app.use((req, res, next) => {
